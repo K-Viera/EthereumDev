@@ -22,4 +22,8 @@ contract Identity {
     function sendEther(address payable receiver) public payable {
         receiver.transfer(msg.value);
     }
+
+    function sum(int a, int b) public pure returns(int result){
+        result=a+b;
+    }
 }
