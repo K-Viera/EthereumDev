@@ -20,7 +20,13 @@ contract CrowdFunding{
     event changeName(address editor,string newName);
     event foundProject(address founder,uint founds);
 
-    function fundProject() public payable{
+    modifier onlyNotAuthor(){
+        require(msg.sender!=author,
+        "the owner can't found it's own project");
+        _;
+    }
+
+    function fundProject() public payable onlyNotAuthor{
         author.transfer(msg.value);
         actualFounds+=msg.value;
         emit foundProject(msg.sender,msg.value);
