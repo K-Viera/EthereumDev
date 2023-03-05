@@ -65,6 +65,19 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					}
+				],
+				"name": "projectStatus",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "actualFounds",
 				"outputs": [
@@ -99,6 +112,13 @@
 					}
 				],
 				"name": "changeProjectName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "closeProject",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -148,6 +168,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "projectActive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -178,11 +211,11 @@
 	},
 	"sources": {
 		"contracts\\CrowdFunding.sol": {
-			"keccak256": "0x98884eb1bfe88e6f06388987795a1b5e9a33d1cefc01c7f604c2ed8dfb68c90e",
+			"keccak256": "0xdef7521c1d60257ec8c66d0efd561c6921c93942370e03af62b174ce6535832b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ecc3823086b470be6be4530e74fe7a3e5dfcb9cb82a52c62643a90d00e43943d",
-				"dweb:/ipfs/QmQDMh6SQ5nBqsr6Fx6JJSEHEUByUTb9G6zqScyoDNPgQ3"
+				"bzz-raw://8093b6471ab7c432484421e36ce7681cb09273cfe8cfdca6c7be854d37a8066b",
+				"dweb:/ipfs/QmeeFf5DzKXzN4ugDGSFbZigS5MxQi96vReaRprwUQ68jL"
 			]
 		}
 	},
