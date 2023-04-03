@@ -1,0 +1,91 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "visitor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "visitors",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "visitorEvent",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "visit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "visitors",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"PersonalRepo/Ethereum/RemixIDE/contracts/Visitors.sol": "Visitors"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"PersonalRepo/Ethereum/RemixIDE/contracts/Visitors.sol": {
+			"keccak256": "0xf90863e2986ec9f39f5821f1974693afaf14a87c40796e842fbf643bd2953e0b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4bfb9f07f3ddddb1d6d54019e59487734da47d7792b909e90a8b01bb99d07bba",
+				"dweb:/ipfs/QmNpE4Euf1hiaj76qznNPfhu8E1aaN8CSqraSsBhkQMd9q"
+			]
+		}
+	},
+	"version": 1
+}
