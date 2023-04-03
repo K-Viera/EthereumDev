@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web3 Page</title>
+</head>
+
+<body>
+
+    <div>
+        Actual value: <label id="counterLabel"></label>
+        <button onclick="increment()">Increment</button>
+        <button onclick="getCount()">Get Count</button>
+    </div>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+
+    <script>
+        const CONTRACT_ABI = [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_count",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "inputs": [],
+                "name": "count",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "getCount",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "increment",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ];
+        const CONTRACT_ADDRESS = '0x3FE631709aa7444adf479Aa93981C0cb243B3435';
+        let signer;
+        let contract;
+
+        const provider = new ethers.providers.Web3Provider(window.ethereum, 'goerli');
+
+        provider.send("eth_requestAccounts", []).then(() => {
+            provider.listAccounts().then((accounts) => {
+                signer = provider.getSigner(accounts[0]);
+                contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+            });
+        });
+
+        async function increment() {
+            await contract.increment();
+        }
+
+        async function getCount() {
+            const count = await contract.getCount();
+            console.log('count', count);
+            var label = document.getElementById("counterLabel");
+            label.innerHTML = count;
+        }
+    </script>
+</body>
+
+</html>
